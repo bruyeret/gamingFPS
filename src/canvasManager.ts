@@ -20,6 +20,14 @@ export class CanvasManager {
         this.resizeObserver = new ResizeObserver(debouncedResizeHandler)
         this.resizeObserver.observe(canvas)
         this.resizeCanvas()
+
+        // Lock pointer
+        canvas.requestPointerLock();
+        canvas.addEventListener("click", () =>  {
+            if (document.pointerLockElement !== canvas) {
+                canvas.requestPointerLock();
+            }
+        })
     }
 
     private resizeCanvas() {
