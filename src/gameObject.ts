@@ -64,10 +64,10 @@ export class Plane extends GameObject {
     ) {
         super()
         const vertices = new Float32Array([
-            -xSize/2, -ySize/2, 0,
-            +xSize/2, -ySize/2, 0,
-            +xSize/2, +ySize/2, 0,
-            -xSize/2, +ySize/2, 0,
+            0, 0, 0,
+            xSize, 0, 0,
+            xSize, ySize, 0,
+            0, ySize, 0,
         ]);
         const triangles = new Uint16Array([
             0, 1, 2,
