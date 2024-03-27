@@ -34,6 +34,7 @@ export class CanvasManager {
         const rect = this.canvas.getBoundingClientRect();
         this.canvas.width = rect.width * devicePixelRatio;
         this.canvas.height = rect.height * devicePixelRatio;
+        this.context.viewport(0, 0, this.canvas.width, this.canvas.height);
     }
 
     get width() {
